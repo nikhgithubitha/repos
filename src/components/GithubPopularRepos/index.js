@@ -19,14 +19,11 @@ class GithubPopularRepos extends Component {
     this.getList()
   }
 
-  getList = () => {
+  getList = async () => {
     const {language} = this.state
     const url = `https://apis.ccbp.in/popular-repos?language=${language}`
-    const options = {
-      method: 'GET',
-    }
-    const response = fetch(url, options)
-    const data = response.json()
+    const response = await fetch(url)
+    const data = await response.json()
     console.log(data)
     const formattedData = data.map(each => ({
       name: each.name,
