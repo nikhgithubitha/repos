@@ -46,7 +46,11 @@ class GithubPopularRepos extends Component {
       <h1>Popular</h1>
       <ul>
         {languageFiltersData.map(each => (
-          <LanguageFilterItem key={each.id} updateOption={this.updateOption} />
+          <LanguageFilterItem
+            key={each.id}
+            updateOption={this.updateOption}
+            languageData={each}
+          />
         ))}
       </ul>
     </div>
