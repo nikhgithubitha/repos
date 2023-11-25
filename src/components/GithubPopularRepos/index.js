@@ -25,7 +25,7 @@ class GithubPopularRepos extends Component {
     const response = await fetch(url)
     const data = await response.json()
     console.log(data)
-    const formattedData = data.map(each => ({
+    const formattedData = data.popular_repos.map(each => ({
       name: each.name,
       id: each.id,
       issuesCount: each.issues_count,
